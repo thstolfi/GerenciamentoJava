@@ -12,7 +12,7 @@ public class apsTheilor {
             verificar = true;
             // Loop para trocar os números para ordem crescente
             for(j = 0; j < (matricula.length - 1); j++){
-                // Tip: Alterando o ">" no if para "<" invertemos para ordem crescente
+                // Tip: Alterando o ">" no if para "<" invertemos para ordem decrescente
                 if(matricula[j] > matricula[j + 1]){
                     aux = matricula[j];
                     matricula[j] = matricula[j + 1];
