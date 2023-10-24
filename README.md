@@ -17,9 +17,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-# Esse projeto é uma atividade prática supervisionada pelo professor Roberto Heinzle.
+<b> Esse projeto é uma atividade prática supervisionada pelo professor Roberto Heinzle. </b>
 
-# Descrição do trabalho desenvolvido:
+<b> Descrição do trabalho desenvolvido: </b>
 
 Escreva um programa que permita armazenar e manipular os dados de 20
 funcionários de uma empresa. Serão fornecidos pelo usuário o número de
