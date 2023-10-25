@@ -4,7 +4,7 @@ public class apsTheilor {
     public static void main(String[] args) throws Exception {
         int[] matricula = new int[3];
 		int[] idade = new int[3];
-        int aux,i,j;
+        int aux,i,j,opcao;
         boolean verificar;
         String entrada;
 
@@ -15,6 +15,19 @@ public class apsTheilor {
             entrada = JOptionPane.showInputDialog("Informe a idade do funcionmário:");
 			idade[i] = Integer.parseInt(entrada);
 		}
+
+        // Abre o menu
+
+        entrada = JOptionPane.showInputDialog("DIGITE SUA OPCAO\n"+
+        "1. Mostrar\n"+
+        "2. Ordenar Crescente por Matricula\n"+
+        "3. Ordenar Decrescente por Idade\n"+
+        "4. Inverter\n"+
+        "5. Procurar Idade\n"+
+        "6. Procurar Matricula\n"+
+        "7. Repete\n"+
+        "99. Vazar\n");
+        opcao = Integer.parseInt(entrada);
 
         // Loop que percorre o array
         for(i = 0; i < matricula.length; i++){
