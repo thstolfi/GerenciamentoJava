@@ -2,10 +2,19 @@ import javax.swing.JOptionPane;
 
 public class apsTheilor {
     public static void main(String[] args) throws Exception {
-        int[] matricula = {4, 5, 1, 3, 2, 7, 8};
-		int[] idade = new int[20];
+        int[] matricula = new int[3];
+		int[] idade = new int[3];
         int aux,i,j;
         boolean verificar;
+        String entrada;
+
+        // Coleta matriculas e idades
+        for( i = 0; i < matricula.length; i++) {
+			entrada = JOptionPane.showInputDialog("Informe o número da matrícula do funcionário:");
+			matricula[i] = Integer.parseInt(entrada);
+            entrada = JOptionPane.showInputDialog("Informe a idade do funcionmário:");
+			idade[i] = Integer.parseInt(entrada);
+		}
 
         // Loop que percorre o array
         for(i = 0; i < matricula.length; i++){
