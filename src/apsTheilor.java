@@ -29,6 +29,7 @@ public class apsTheilor {
         "99. Vazar\n");
         opcao = Integer.parseInt(entrada);
 
+        // Funcao para ordenar matricula CRESCENTE
         // Loop que percorre o array
         for(i = 0; i < matricula.length; i++){
             verificar = true;
@@ -50,6 +51,25 @@ public class apsTheilor {
         // Printa os números em ordem crescente
         for(i = 0; i < matricula.length; i++){
             System.out.println(matricula[i] + " ");
+        }
+
+        // Funcao para ordenar idade DESCRESCENTE
+        for(i = 0; i < idade.length; i++){
+            verificar = true;
+            for(j = 0; j < (idade.length - 1); j++){
+                if(idade[j] < idade[j + 1]){
+                    aux = idade[j];
+                    idade[j] = idade[j + 1];
+                    idade[j + 1] = aux;
+                    verificar = false;
+                }
+            }
+            if(verificar){
+                break;
+            }
+        }
+        for(i = 0; i < idade.length; i++){
+            System.out.println(idade[i] + " ");
         }
     }
 }
