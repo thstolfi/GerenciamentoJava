@@ -29,7 +29,19 @@ public class apsTheilor {
             "99. Sair\n");
             opcao = Integer.parseInt(entrada);
 
+
+            // Verificacao para sair do loop caso a opcao seja 99 e não mostrar a mensagem OPCAO INVALIDA
+            if (opcao == 99) {
+                break;
+            }
+
             switch (opcao){
+                case 1:
+                    for(i = 0; i < matricula.length; i++){
+                        System.out.println("Funcionario " + i);
+                        System.out.println("Matricula: " + matricula[i] + " - Idade: " + idade[i]);
+                    }
+                break;
                 case 2: 
                     // Funcao para ordenar matricula CRESCENTE
                     // Loop que percorre o array
