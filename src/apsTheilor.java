@@ -4,7 +4,7 @@ public class apsTheilor {
     public static void main(String[] args) throws Exception {
         int[] matricula = new int[3];
 		int[] idade = new int[3];
-        int aux,i,j,opcao;
+        int aux,aux2,i,j,opcao;
         boolean verificar;
         String entrada;
 
@@ -32,10 +32,10 @@ public class apsTheilor {
             switch (opcao){
                 case 1:
                     for(i = 0; i < matricula.length; i++){
-                        System.out.println("FUNCIONARIO " + (i + 1) + ": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
-                    }
+                    System.out.println("FUNCIONARIO " + (i + 1) + ": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
+        }
                 break;
-                case 2: 
+                case 2:
                     // Funcao para ordenar matricula CRESCENTE
                     // Loop que percorre o array
                     for(i = 0; i < matricula.length; i++){
@@ -47,6 +47,9 @@ public class apsTheilor {
                                 aux = matricula[j];
                                 matricula[j] = matricula[j + 1];
                                 matricula[j + 1] = aux;
+                                aux2 = idade[j];
+                                idade[j] = idade[j + 1];
+                                idade[j + 1] = aux2;
                                 verificar = false;
                             }
                         }
@@ -70,6 +73,9 @@ public class apsTheilor {
                                 aux = idade[j];
                                 idade[j] = idade[j + 1];
                                 idade[j + 1] = aux;
+                                aux2 = matricula[j];
+                                matricula[j] = matricula[j + 1];
+                                matricula[j + 1] = aux2; 
                                 verificar = false;
                             }
                         }
