@@ -34,7 +34,6 @@ public class apsTheilor {
             switch (opcao) {
                 case 1:
                     for (int i = 0; i < matricula.length; i++) {
-                        System.out.println();
                         System.out.println("FUNCIONARIO " + (i + 1) +": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
                     }
                     break;
