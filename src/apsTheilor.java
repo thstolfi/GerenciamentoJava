@@ -1,65 +1,95 @@
 import javax.swing.JOptionPane;
-import java.util.TreeMap;
 
 public class apsTheilor {
     public static void main(String[] args) throws Exception {
         int[] matricula = new int[3];
-        int[] idade = new int[3];
+		int[] idade = new int[3];
+        int aux,i,j,opcao;
+        boolean verificar;
         String entrada;
 
         // Coleta matriculas e idades
-        for (int i = 0; i < matricula.length; i++) {
-            entrada = JOptionPane.showInputDialog("Informe o número da matrícula do funcionário " + (i + 1) + ":");
-            matricula[i] = Integer.parseInt(entrada);
+        for( i = 0; i < matricula.length; i++) {
+			entrada = JOptionPane.showInputDialog("Informe o número da matrícula do funcionário " + (i + 1) + ":");
+			matricula[i] = Integer.parseInt(entrada);
             entrada = JOptionPane.showInputDialog("Informe a idade do funcionário " + (i + 1) + ":");
-            idade[i] = Integer.parseInt(entrada);
-        }
+			idade[i] = Integer.parseInt(entrada);
+		}
 
-        do {
-            entrada = JOptionPane.showInputDialog("DIGITE SUA OPCAO\n" +
-                    "1. Mostrar Lista\n" +
-                    "2. Ordenar Crescente por Matricula\n" +
-                    "3. Ordenar Decrescente por Idade\n" +
-                    "4. Inverter\n" +
-                    "5. Procurar Idade\n" +
-                    "6. Procurar Matricula\n" +
-                    "7. Repete\n" +
-                    "99. Sair\n");
-            int opcao = Integer.parseInt(entrada);
+        do{
+            // Abre o menu
+            entrada = JOptionPane.showInputDialog("DIGITE SUA OPCAO\n"+
+            "1. Mostrar Lista\n"+
+            "2. Ordenar Crescente por Matricula\n"+
+            "3. Ordenar Decrescente por Idade\n"+
+            "4. Inverter\n"+
+            "5. Procurar Idade\n"+
+            "6. Procurar Matricula\n"+
+            "7. Repete\n"+
+            "99. Sair\n");
+            opcao = Integer.parseInt(entrada);
 
+            // Verificacao para sair do loop caso a opcao seja 99 e não mostrar a mensagem OPCAO INVALIDA
             if (opcao == 99) {
                 break;
             }
 
-            switch (opcao) {
+            switch (opcao){
                 case 1:
-                    for (int i = 0; i < matricula.length; i++) {
-                        System.out.println("FUNCIONARIO " + (i + 1) +": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
+                    for(i = 0; i < matricula.length; i++){
+                        System.out.println("Funcionario " + i);
+                        System.out.println("Matricula: " + matricula[i] + " - Idade: " + idade[i]);
+                    }
+                break;
+                case 2: 
+                    // Funcao para ordenar matricula CRESCENTE
+                    // Loop que percorre o array
+                    for(i = 0; i < matricula.length; i++){
+                        verificar = true;
+                        // Loop para trocar os números para ordem crescente
+                        for(j = 0; j < (matricula.length - 1); j++){
+                            // Tip: Alterando o ">" no if para "<" invertemos para ordem decrescente
+                            if(matricula[j] > matricula[j + 1]){
+                                aux = matricula[j];
+                                matricula[j] = matricula[j + 1];
+                                matricula[j + 1] = aux;
+                                verificar = false;
+                            }
+                        }
+                        // Boolean para verificar se os números já estão em ordem
+                        if(verificar){
+                            break;
+                        }
+                    }
+                    // Printa os números em ordem crescente
+                    System.out.println("Matriculas: ");
+                    for(i = 0; i < matricula.length; i++){
+                        System.out.println(matricula[i]);
                     }
                     break;
-                case 2:
-                    TreeMap<Integer, Integer> matriculaMap = new TreeMap<>();
-                    for (int i = 0; i < matricula.length; i++) {
-                        matriculaMap.put(matricula[i], idade[i]);
+                case 3: 
+                    // Funcao para ordenar idade DESCRESCENTE
+                    for(i = 0; i < idade.length; i++){
+                        verificar = true;
+                        for(j = 0; j < (idade.length - 1); j++){
+                            if(idade[j] < idade[j + 1]){
+                                aux = idade[j];
+                                idade[j] = idade[j + 1];
+                                idade[j + 1] = aux;
+                                verificar = false;
+                            }
+                        }
+                        if(verificar){
+                            break;
+                        }
                     }
-                    System.out.println("Matriculas em ordem crescente:");
-                    for (int matriculaKey : matriculaMap.keySet()) {
-                        System.out.println("Matricula: " + matriculaKey + " - Idade: " + matriculaMap.get(matriculaKey));
-                    }
+                    System.out.println("Idades: ");
+                    for(i = 0; i < idade.length; i++){
+                        System.out.println(idade[i]);
+                    } 
                     break;
-                case 3:
-                    TreeMap<Integer, Integer> idadeMap = new TreeMap<>();
-                    for (int i = 0; i < idade.length; i++) {
-                        idadeMap.put(idade[i], matricula[i]);
-                    }
-                    System.out.println("Idades em ordem decrescente:");
-                    for (int idadeKey : idadeMap.descendingKeySet()) {
-                        System.out.println("Idade: " + idadeKey + " - Matricula: " + idadeMap.get(idadeKey));
-                    }
-                    break;
-                default:
-                    System.out.println("OPCAO INVALIDA");
-            }
-        } while (true);
+                    default: System.out.println("OPCAO INVALIDA");
+                }
+            }while(opcao != 99);
     }
 }
