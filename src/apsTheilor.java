@@ -29,16 +29,10 @@ public class apsTheilor {
             "99. Sair\n");
             opcao = Integer.parseInt(entrada);
 
-            // Verificacao para sair do loop caso a opcao seja 99 e não mostrar a mensagem OPCAO INVALIDA
-            if (opcao == 99) {
-                break;
-            }
-
             switch (opcao){
                 case 1:
                     for(i = 0; i < matricula.length; i++){
-                        System.out.println("Funcionario " + i);
-                        System.out.println("Matricula: " + matricula[i] + " - Idade: " + idade[i]);
+                        System.out.println("FUNCIONARIO " + (i + 1) + ": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
                     }
                 break;
                 case 2: 
@@ -88,8 +82,11 @@ public class apsTheilor {
                         System.out.println(idade[i]);
                     } 
                     break;
-                    default: System.out.println("OPCAO INVALIDA");
-                }
-            }while(opcao != 99);
+                case 99: 
+                    System.out.println("Saindo do programa...");
+                    break;
+                default: System.out.println("OPCAO INVALIDA");
+            }
+        }while(opcao != 99);
     }
 }
