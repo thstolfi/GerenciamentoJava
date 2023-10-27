@@ -8,6 +8,8 @@ public class apsTheilor {
         boolean verificar;
         String entrada;
 
+        //SUGESTAO DE ARRAYS: 5 - 10 / 4 - 12 / 6 - 11
+
         // Coleta matriculas e idades
         for( i = 0; i < matricula.length; i++) {
 			entrada = JOptionPane.showInputDialog("Informe o número da matrícula do funcionário " + (i + 1) + ":");
@@ -31,9 +33,10 @@ public class apsTheilor {
 
             switch (opcao){
                 case 1:
+                    System.out.println("--- LISTA DE FUNCIONÁRIOS ---");
                     for(i = 0; i < matricula.length; i++){
-                    System.out.println("FUNCIONARIO " + (i + 1) + ": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
-        }
+                        System.out.println("FUNCIONARIO " + (i + 1) + ": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
+                    }
                 break;
                 case 2:
                     // Funcao para ordenar matricula CRESCENTE
@@ -59,9 +62,9 @@ public class apsTheilor {
                         }
                     }
                     // Printa os números em ordem crescente
-                    System.out.println("Matriculas: ");
+                    System.out.println("--- FUNCIONÁRIOS: MATRÍCULA CRESCENTE ---");
                     for(i = 0; i < matricula.length; i++){
-                        System.out.println(matricula[i]);
+                        System.out.println("FUNCIONARIO " + (i + 1) + ": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
                     }
                     break;
                 case 3: 
@@ -83,9 +86,9 @@ public class apsTheilor {
                             break;
                         }
                     }
-                    System.out.println("Idades: ");
+                    System.out.println("--- FUNCIONÁRIOS: IDADE DECRESCENTE ---");
                     for(i = 0; i < idade.length; i++){
-                        System.out.println(idade[i]);
+                        System.out.println("FUNCIONARIO " + (i + 1) + ": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
                     } 
                     break;
                 case 99: 
