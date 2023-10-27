@@ -4,7 +4,7 @@ public class apsTheilor {
     public static void main(String[] args) throws Exception {
         int[] matricula = new int[3];
 		int[] idade = new int[3];
-        int aux,aux2,i,j,opcao;
+        int aux,i,j,opcao,esq,dir;
         boolean verificar;
         String entrada;
 
@@ -50,9 +50,9 @@ public class apsTheilor {
                                 aux = matricula[j];
                                 matricula[j] = matricula[j + 1];
                                 matricula[j + 1] = aux;
-                                aux2 = idade[j];
+                                aux = idade[j];
                                 idade[j] = idade[j + 1];
-                                idade[j + 1] = aux2;
+                                idade[j + 1] = aux;
                                 verificar = false;
                             }
                         }
@@ -76,9 +76,9 @@ public class apsTheilor {
                                 aux = idade[j];
                                 idade[j] = idade[j + 1];
                                 idade[j + 1] = aux;
-                                aux2 = matricula[j];
+                                aux = matricula[j];
                                 matricula[j] = matricula[j + 1];
-                                matricula[j + 1] = aux2; 
+                                matricula[j + 1] = aux; 
                                 verificar = false;
                             }
                         }
@@ -90,6 +90,34 @@ public class apsTheilor {
                     for(i = 0; i < idade.length; i++){
                         System.out.println("FUNCIONARIO " + (i + 1) + ": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
                     } 
+                    break;
+                case 4:
+                    // Funcao para inverter dados do array
+                    for(i = 0; i < matricula.length; i++){
+                        esq = 0;
+                        dir = matricula.length - 1;
+
+                        while(esq < dir){
+                            aux = matricula[esq];
+                            matricula[esq] = matricula[dir];
+                            matricula[dir] = aux;
+                            aux = idade[esq];
+                            idade[esq] = idade[dir];
+                            idade[dir] = aux;
+                            esq++;
+                            dir--;
+                        }
+                    }
+                    System.out.println("--- FUNCIONÁRIOS: INVERSO DA ÚLTIMA ORDEM ---");
+                    for(i = 0; i < idade.length; i++){
+                        System.out.println("FUNCIONARIO " + (i + 1) + ": Matricula: " + matricula[i] + " - Idade: " + idade[i]);
+                    } 
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
                     break;
                 case 99: 
                     System.out.println("Saindo do programa...");
