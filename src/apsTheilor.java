@@ -4,7 +4,7 @@ public class apsTheilor {
     public static void main(String[] args) throws Exception {
         int[] matricula = new int[3];
 		int[] idade = new int[3];
-        int aux,i,j,opcao,esq,dir;
+        int aux,i,j,opcao,esq,dir,idadefuncionario;
         boolean verificar;
         String entrada;
 
@@ -114,6 +114,23 @@ public class apsTheilor {
                     } 
                     break;
                 case 5:
+                    entrada = JOptionPane.showInputDialog("Informe o número da matrícula do funcionário:");
+                    aux = Integer.parseInt(entrada);
+                    idadefuncionario = 0;
+                    verificar = false;
+                    for(i = 0; i < matricula.length; i++){
+                        if(aux == matricula[i]){
+                            idadefuncionario = idade[i];
+                            verificar = true;
+                        }
+                    }
+                    if(verificar){
+                        System.out.println("Idade do funcionário com a matrícula " + aux + ": " + idadefuncionario);
+                    }
+                    else{
+                        System.out.println("Matrícula não encontrada");
+                    }
+
                     break;
                 case 6:
                     break;
