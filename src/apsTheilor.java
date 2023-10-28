@@ -130,11 +130,18 @@ public class apsTheilor {
                     else{
                         System.out.println("Matrícula não encontrada");
                     }
-
                     break;
                 case 6:
+                    entrada = JOptionPane.showInputDialog("Informe o número da matrícula do funcionário:");
+                    aux = Integer.parseInt(entrada);
+                    for(i = 0; i < matricula.length; i++){
+                        if(aux == matricula[i]){
+                            System.out.println("A matrícula se encontra na posição: " + (i + 1));
+                        }
+                    }
                     break;
                 case 7:
+                    
                     break;
                 case 99: 
                     System.out.println("Saindo do programa...");
