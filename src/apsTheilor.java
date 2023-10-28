@@ -2,13 +2,11 @@ import javax.swing.JOptionPane;
 
 public class apsTheilor {
     public static void main(String[] args) throws Exception {
-        int[] matricula = new int[3];
-		int[] idade = new int[3];
+        int[] matricula = new int[20];
+		int[] idade = new int[20];
         int aux,i,j,opcao,esq,dir,idadefuncionario;
         boolean verificar;
         String entrada;
-
-        //SUGESTAO DE ARRAYS: 5 - 10 / 4 - 12 / 6 - 11
 
         // Coleta matriculas e idades
         for( i = 0; i < matricula.length; i++) {
@@ -122,6 +120,7 @@ public class apsTheilor {
                         if(aux == matricula[i]){
                             idadefuncionario = idade[i];
                             verificar = true;
+                            break;
                         }
                     }
                     if(verificar){
@@ -141,7 +140,20 @@ public class apsTheilor {
                     }
                     break;
                 case 7:
-                    
+                    verificar = false;
+                    for(i = 0; i < matricula.length; i++){
+                        for(j = 0; j < matricula.length; j++){
+                            if(matricula[i] == matricula[j] && i != j){
+                                verificar = true;
+                                break;
+                            }
+                        }
+                    }
+                    if(verificar){
+                        System.out.println("Há matrículas repetidas");
+                    }else{
+                        System.out.println("Não há matrículas repetidas");
+                    }
                     break;
                 case 99: 
                     System.out.println("Saindo do programa...");
