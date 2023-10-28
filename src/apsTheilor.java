@@ -15,7 +15,6 @@ public class apsTheilor {
             entrada = JOptionPane.showInputDialog("Informe a idade do funcionário " + (i + 1) + ":");
 			idade[i] = Integer.parseInt(entrada);
 		}
-
         do{
             // Abre o menu
             entrada = JOptionPane.showInputDialog("DIGITE SUA OPCAO\n"+
@@ -28,7 +27,6 @@ public class apsTheilor {
             "7. Repete\n"+
             "99. Sair\n");
             opcao = Integer.parseInt(entrada);
-
             switch (opcao){
                 case 1:
                     System.out.println("--- LISTA DE FUNCIONÁRIOS ---");
@@ -94,7 +92,6 @@ public class apsTheilor {
                     for(i = 0; i < matricula.length; i++){
                         esq = 0;
                         dir = matricula.length - 1;
-
                         while(esq < dir){
                             aux = matricula[esq];
                             matricula[esq] = matricula[dir];
