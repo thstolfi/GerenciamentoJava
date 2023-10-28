@@ -55,8 +55,6 @@ Se a opção7 for selecionada, o programa diz se existem ou não matrículas rep
 correspondente, e então reapresenta o menu. <br>
 A opção 99 encerra. 
 
-<i>O projeto está em desenvolvimento no momento.</i>
-
 ## 🔖 Layout
 
 Projetado e desenvolvido por Theilor Stolfi, de maneira a priorizar o tempo de execução
